@@ -1,27 +1,52 @@
 /*
- * Plain widget theme, only specific widgets are themed
- */
-
-/*
  * General panel settings
  */
 
-LXQtPanel #BackgroundWidget{
+LXQtPanel #BackgroundWidget {
     background: palette(base);
+}
+
+/*
+ * General plugins settings
+ */
+
+Plugin > QToolButton,
+Plugin > QWidget > QToolButton,
+Plugin > QWidget > QToolButton > QWidget > QToolButton,
+LXQtPanelPlugin > QToolButton {
+    margin: 0;
+    padding: 3px;
+    border: 1px solid transparent;
+    qproperty-iconSize: 24px;
+}
+
+/*
+ * Main menu
+ */
+
+#MainMenu {
+    qproperty-icon: url(mainmenu.svg);
+    padding: 4px;
 }
 
 /*
  * TaskBar
  */
-
-#TaskBar QToolButton {
-    margin: 2px;
+#TaskBar QToolButton{
     color: palette(text);
+    margin-left: 2px;
+    margin-right: 2px;
+    border-bottom: 3px solid transparent;
 }
 
 #TaskBar QToolButton:on{
-    color: palette(highlighted-text);
-    background: palette(highlight);
+    border-bottom: 3px solid palette(highlight);
+    color: palette(text);
+}
+
+#TaskBar QToolButton:hover{
+    border-bottom: 3px solid palette(highlight);
+    color: palette(dark);
 }
 
 #TaskBar QToolButton[urgent="true"] {
@@ -29,19 +54,70 @@ LXQtPanel #BackgroundWidget{
     background: palette(highlight);
 }
 
+#TaskBar LXQtGroupPopup {
+    background: palette(base);
+    border: 1px solid palette(highlight);
+    border-radius: 2px;
+}
+ /*
+ * QuickLaunch
+ */
+#QuickLaunchPlaceHolder {
+    color: palette(highlight);
+    padding: 2px;
+}
+
 /*
  * Desktopswitch
  */
-
-#DesktopSwitch QToolButton {
-    padding: 2px;
+#DesktopSwitch QToolButton{
     margin: 1px;
+    padding: 1px;
+    border: 2px solid transparent;
+    color: palette(text);
+}
+
+#DesktopSwitch QToolButton:hover{
+    border: 2px solid palette(highlight);
+    color: palette(dark);
+}
+
+#DesktopSwitch QToolButton:on{
+    border: 2px solid palette(highlight);
+    background: palette(mid);
+    color: palette(text);
 }
 
 #DesktopSwitch QToolButton[urgent="true"] {
-    color: palette(highlighted-text);
-    background: palette(highlight);
+    border: 2px solid palette(highlight);
+    background: palette(mid);
+    color: palette(text);
 }
+
+/*
+ * #SysStat
+ */
+
+#SysStat_Graph {
+    qproperty-gridColor: palette(dark);
+    qproperty-titleColor: palette(text);
+    qproperty-cpuSystemColor: palette(highlight);
+    qproperty-memAppsColor: palette(highlight);
+    qproperty-memBuffersColor: palette(mid);
+    qproperty-memCachedColor: palette(shadow);
+    qproperty-swapUsedColor: palette(highlight);
+    qproperty-netReceivedColor: palette(highlight);
+    qproperty-netTransmittedColor: palette(shadow);
+}
+
+/*
+ * CPU monitor
+ */
+
+#LXQtCpuLoad {
+    qproperty-fontColor: palette(text);
+}
+
 
 /*
  * Spacer
@@ -49,32 +125,4 @@ LXQtPanel #BackgroundWidget{
 
 #Spacer {
     background-position: center center;
-}
-
-#Spacer[type="lined"] {
-    background-image: url(/spacer-plugin/spacer-line.svg);
-}
-
-#Spacer[type="dotted"] {
-    background-image: url(/spacer-plugin/spacer-dots.svg);
- }
-
-#Spacer[orientation="horizontal"] {
-    background-repeat: repeat-y;
-    margin-top: 2px;
-    margin-bottom: 2px;
-}
-
-#Spacer[orientation="vertical"] {
-    background-repeat: repeat-x;
-    margin-right: 2px;
-    margin-left: 2px;
-}
-
-/*
- * Main menu plugin
- */
-
-#MainMenu {
-    qproperty-icon: url(mainmenu.svg);
 }
