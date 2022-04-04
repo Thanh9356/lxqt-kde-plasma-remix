@@ -1,4 +1,5 @@
 # lxqt-system-modified
+
 A remix of LXQt's kde-plasma and system theme with... some modifications.
 - Panel = kde-plasma + modification
 - Color scheme = system
@@ -21,3 +22,5 @@ Download this repo and copy the `plasma-remix` folder to
 - `~/.local/share/lxqt/themes` (current user only).
 
 Now play it around with your Kvantum theme or anything else!
+
+It's recommended that you should log out every time you changed Kvantum themes or Qt style to get the best result.
