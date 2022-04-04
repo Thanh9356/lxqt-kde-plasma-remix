@@ -16,6 +16,8 @@ Something you might want it and like it...
 
 ## Install
 
-Download this repo and copy the `plasma-remix` folder to `/usr/share/lxqt/themes` (all users) or `~/.local/share/lxqt/themes` (current user only).
+Download this repo and copy the `plasma-remix` folder to
+- `/usr/share/lxqt/themes` (for all users)
+- `~/.local/share/lxqt/themes` (current user only).
 
 Now play it around with your Kvantum theme or anything else!
