@@ -15,7 +15,7 @@ Plugin > QWidget > QToolButton,
 Plugin > QWidget > QToolButton > QWidget > QToolButton,
 LXQtPanelPlugin > QToolButton {
     margin: 0;
-    padding: 3px;
+    padding: 4px;
     border: 1px solid transparent;
     qproperty-iconSize: 24px;
 }
@@ -29,28 +29,42 @@ LXQtPanelPlugin > QToolButton {
     padding: 4px;
 }
 
+#MainMenu:pressed {
+    padding: 6px;
+}
+
 /*
  * TaskBar
  */
-#TaskBar QToolButton{
+#TaskBar QToolButton {
     color: palette(text);
-    margin-left: 2px;
-    margin-right: 2px;
-    border-bottom: 3px solid transparent;
+    border: 3px solid transparent;
+    padding: 2px;
 }
 
-#TaskBar QToolButton:on{
-    border-bottom: 3px solid palette(highlight);
+#TaskBar QToolButton:on {
+    border-top: 3px solid palette(highlight);
     color: palette(text);
 }
 
-#TaskBar QToolButton:hover{
-    border-bottom: 3px solid palette(highlight);
-    color: palette(dark);
+#TaskBar QToolButton:on:hover {
+    border-top: 3px solid palette(highlight);
+    background: palette(alternate-base);
+}
+
+#TaskBar QToolButton:hover {
+    border-top: 3px solid transparent;
+    background: palette(alternate-base);
+}
+
+#TaskBar QToolButton:pressed {
+    padding: 3px;
+    border-top: 3px solid palette(highlight);
+    background: palette(alternate-base);
 }
 
 #TaskBar QToolButton[urgent="true"] {
-    color: palette(highlighted-text);
+    color: palette(text);
     background: palette(highlight);
 }
 
@@ -59,6 +73,30 @@ LXQtPanelPlugin > QToolButton {
     border: 1px solid palette(highlight);
     border-radius: 2px;
 }
+
+#TaskBar LXQtGroupPopup QToolButton {
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+
+#TaskBar LXQtGroupPopup QToolButton:on {
+    background: palette(highlight);
+    color: palette(highlighted-text);
+}
+
+#TaskBar LXQtGroupPopup QToolButton:on:hover {
+    border: 1px solid palette(highlight);
+    background: palette(alternate-base);
+    color: palette(text);
+}
+
+#TaskBar LXQtGroupPopup QToolButton:hover {
+    border: 1px solid palette(highlight);
+    background: palette(alternate-base);
+    color: palette(text);
+}
+
+
  /*
  * QuickLaunch
  */
@@ -70,26 +108,37 @@ LXQtPanelPlugin > QToolButton {
 /*
  * Desktopswitch
  */
+
+#DesktopSwitch {
+    margin: 4px;
+}
+
 #DesktopSwitch QToolButton{
     margin: 1px;
     padding: 1px;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     color: palette(text);
 }
 
 #DesktopSwitch QToolButton:hover{
-    border: 2px solid palette(highlight);
+    border: 1px solid palette(highlight);
     color: palette(dark);
 }
 
+#DesktopSwitch QToolButton:pressed{
+    border: 1px solid palette(highlight);
+    background: palette(highlight);
+    color: palette(highlighted-text);
+}
+
 #DesktopSwitch QToolButton:on{
-    border: 2px solid palette(highlight);
+    border: 1px solid palette(highlight);
     background: palette(mid);
-    color: palette(text);
+    color: palette(highlighted-text);
 }
 
 #DesktopSwitch QToolButton[urgent="true"] {
-    border: 2px solid palette(highlight);
+    border: 1px solid palette(highlight);
     background: palette(mid);
     color: palette(text);
 }
@@ -125,4 +174,24 @@ LXQtPanelPlugin > QToolButton {
 
 #Spacer {
     background-position: center center;
+}
+
+#Spacer[type="lined"] {
+    background-image: url(/spacer-plugin/spacer-line.svg);
+}
+
+#Spacer[type="dotted"] {
+    background-image: url(/spacer-plugin/spacer-dots.svg);
+ }
+
+#Spacer[orientation="horizontal"] {
+    background-repeat: repeat-y;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#Spacer[orientation="vertical"] {
+    background-repeat: repeat-x;
+    margin-right: 2px;
+    margin-left: 2px;
 }
