@@ -33,6 +33,45 @@ LXQtPanelPlugin > QToolButton {
     padding: 6px;
 }
 
+#MainMenu QMenu {
+    border: 1px solid palette(dark);
+    border-radius: 2px;
+    background: palette(base);
+    color: palette(text);
+    padding: 4px;
+}
+
+#MainMenu  QToolButton {
+    background-color: palette(base);
+    color: palette(text);
+}
+
+#MainMenu QMenu::icon {
+    background-color: transparent;
+    border: 2px solid transparent;
+}
+
+#MainMenu QMenu::item {
+    color: palette(text);
+}
+
+#MainMenu QMenu::item:disabled {
+    color: palette(highlighted-text);
+}
+
+#MainMenu QMenu::item:selected {
+    color: palette(text);
+    background: palette(alternate-base);
+    border-left: 3px solid palette(highlight);
+
+}
+
+#MainMenu QMenu::item:selected:disabled {
+    color: palette(highlighted-text);
+    background: palette(highlight);
+}
+
+
 /*
  * TaskBar
  */
@@ -167,6 +206,22 @@ LXQtPanelPlugin > QToolButton {
     qproperty-fontColor: palette(text);
 }
 
+/*
+ * Volume plugin
+ */
+
+VolumePopup {
+    border: 1px solid palette(dark);
+    border-radius: 2px;
+    background: palette(base);
+    padding: 4px;
+}
+
+VolumePopup  > QPushButton {
+    margin: 4px;
+    qproperty-iconSize: 22px;
+    padding: 4px 16px;
+}
 
 /*
  * Spacer
