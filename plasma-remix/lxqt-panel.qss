@@ -83,12 +83,12 @@ LXQtPanelPlugin > QToolButton {
 
 #TaskBar QToolButton:on {
     border-top: 3px solid palette(highlight);
+    background: palette(alternate-base);
     color: palette(text);
 }
 
 #TaskBar QToolButton:on:hover {
     border-top: 3px solid palette(highlight);
-    background: palette(alternate-base);
 }
 
 #TaskBar QToolButton:hover {
@@ -109,7 +109,7 @@ LXQtPanelPlugin > QToolButton {
 
 #TaskBar LXQtGroupPopup {
     background: palette(base);
-    border: 1px solid palette(highlight);
+    border: 1px solid palette(dark);
     border-radius: 2px;
 }
 
